@@ -5,15 +5,16 @@
 This project explores how unsupervised machine learning can uncover hidden patterns in music. By analyzing Spotify audio features and applying K-Means clustering, we group songs with similar sound profiles and generate cohesive, human-intuitive playlists all without using genre labels.
 
 # 📌 Project Overview
-
 Modern music libraries contain millions of tracks. Manually curating playlists based on mood or sound is time-consuming and subjective. This project demonstrates how Spotify audio features combined with unsupervised ML can:
-	•	Detect musical similarity
-	•	Cluster songs by shared audio characteristics
-	•	Generate thematic playlists
-	•	Align algorithmic results with human perception
+- Detect musical similarity
+- Cluster songs by shared audio characteristics
+- Generate thematic playlists
+- Align algorithmic results with human perception
 
 Project Title: Unsupervised ML
+
 Dataset Size: ~5,000 songs
+
 Core Technique: K-Means Clustering
 
 
@@ -32,41 +33,41 @@ Answer: Yes. Human review confirmed a very high degree of perceptual similarity 
 # 2️⃣ Feature Selection
 
 Kept Features (Numeric Only):
-	•	Danceability
-	•	Energy
-	•	Valence
-	•	Loudness
-	•	Acousticness
-	•	Instrumentalness
-	•	Speechiness
+- Danceability
+- Energy
+- Valence
+- Loudness
+- Acousticness
+- Instrumentalness
+- Speechiness
 
 Dropped Features:
-	•	Non-numeric metadata (e.g., song titles, artist names)
+- Non-numeric metadata (e.g., song titles, artist names)
 
 Only numerical features were used to ensure unbiased, sound-based clustering.
 
 # 3️⃣ Feature Scaling
 
 To ensure no single feature dominated the analysis:
-	•	Min-Max Scaling was applied
-	•	All features were normalized to the range [0, 1]
+- Min-Max Scaling was applied
+- All features were normalized to the range [0, 1]
 
 # 4️⃣ Clustering
-	•	Algorithm: K-Means
-	•	Number of Clusters: k = 25
-	•	Random State: 42 (ensures reproducibility)
+- Algorithm: K-Means
+- Number of Clusters: k = 25
+- Random State: 42 (ensures reproducibility)
 
 This approach aligns perfectly with Unsupervised ML principles:
-	•	No labeled data required
-	•	Fast and scalable
-	•	Easy to interpret
-	•	Effective for large datasets
+- No labeled data required
+- Fast and scalable
+- Easy to interpret
+- Effective for large datasets
 
 # 5️⃣ Choosing the Optimal k
 
 The number of clusters was determined using:
-	•	Silhouette Score
-	•	Elbow Method
+- Silhouette Score
+- Elbow Method
 
 Both methods supported k = 25 as a strong balance between cohesion and separation.
 
@@ -75,68 +76,69 @@ Both methods supported k = 25 as a strong balance between cohesion and separatio
 Correlation Highlights
 
 Positive Correlations:
-	•	Loudness ↔ Energy
-	•	Danceability ↔ Valence
+- Loudness ↔ Energy
+- Danceability ↔ Valence
 
 Negative Correlations:
-	•	Acousticness ↔ Energy
-	•	Acousticness ↔ Loudness
-	•	Instrumentalness ↔ Danceability
+- Acousticness ↔ Energy
+- Acousticness ↔ Loudness
+- Instrumentalness ↔ Danceability
 
 Key Observations
-	•	Energetic tracks tend to be louder
-	•	Acoustic and instrumental tracks are generally quieter and less energetic
+- Energetic tracks tend to be louder
+- Acoustic and instrumental tracks are generally quieter and less energetic
 
 # 🧭 Visualization
-	•	PCA (Principal Component Analysis) reduced feature space to 2D
-	•	Each point represents a song
-	•	Colors indicate cluster membership
-	•	Large “X” markers represent centroids
+- PCA (Principal Component Analysis) reduced feature space to 2D
+- Each point represents a song
+- Colors indicate cluster membership
+- Large “X” markers represent centroids
 
-Result:
-	•	Clearly separated clusters
-	•	Distant clusters represent distinct musical styles (e.g., Metal vs. Classic Pop & Rock)
+### Result:
+- Clearly separated clusters
+- Distant clusters represent distinct musical styles (e.g., Metal vs. Classic Pop & Rock)
 
 # 🎼 Thematic Playlist Creation
 
 Clusters were transformed into playlists using a two-step approach:
-	1.	Artist Profiling with ChatGPT to infer cluster themes
-	2.	Manual Genre Validation to ensure accuracy
 
-Sample Playlists
-	•	Classic Pop & Rock
-	•	Hip-Hop & Pop-Rock Fusion
-	•	Urban Pop & Soft Rock
-	•	Latin Pop & Reggaeton
+1) Artist Profiling with ChatGPT to infer cluster themes
+2) Manual Genre Validation to ensure accuracy
+
+## Sample Playlists
+- Classic Pop & Rock
+- Hip-Hop & Pop-Rock Fusion
+- Urban Pop & Soft Rock
+- Latin Pop & Reggaeton
 
 Each playlist reflects its cluster centroid’s dominant audio characteristics.
 
 # ✅ Prototype Effectiveness
-	•	Two songs sampled per playlist
-	•	Strong cohesion observed within each cluster
-	•	Songs shared consistent mood, energy, and sound texture
+- Two songs sampled per playlist
+- Strong cohesion observed within each cluster
+- Songs shared consistent mood, energy, and sound texture
+	
+ This validated the clustering quality and playlist logic.
 
-# This validated the clustering quality and playlist logic.
-
-🚀 Spotify Integration
-	•	Generated playlists were uploaded directly to Spotify using the Spotify API
-	•	Demonstrates real-world applicability of the model
+# 🚀 Spotify Integration
+- Generated playlists were uploaded directly to Spotify using the Spotify API
+- Demonstrates real-world applicability of the model
 
 # 🔮 Conclusion & Next Steps
 
-What We Learned
-	•	Spotify audio features reliably capture musical similarity
-	•	K-Means is a strong baseline for playlist generation
-	•	Unsupervised ML can align closely with human musical perception
+## What We Learned
+- Spotify audio features reliably capture musical similarity
+- K-Means is a strong baseline for playlist generation
+- Unsupervised ML can align closely with human musical perception
 
-Future Improvements
-	•	Incorporate real-time user feedback:
-	•	Skip rate
-	•	Listening duration
-	•	Time of day
-	•	Geolocation
-	•	Build personalized playlists per user profile
-	•	Explore advanced models for smoother musical transitions
+### Future Improvements
+- Incorporate real-time user feedback:
+- Skip rate
+- Listening duration
+- Time of day
+- Geolocation
+- Build personalized playlists per user profile
+- Explore advanced models for smoother musical transitions
 
 # 🛠 Tech Stack
 	•	Programming Language: Python

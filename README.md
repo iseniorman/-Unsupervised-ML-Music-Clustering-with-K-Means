@@ -2,7 +2,7 @@
 
 ## Data Detectives: Cracking the Playlist Case with Audio Clues
 
-This project explores how unsupervised machine learning can uncover hidden patterns in music. By analyzing Spotify audio features and applying K-Means clustering, I group songs with similar sound profiles and generate cohesive, human-intuitive playlists all without using genre labels.
+This project explores how unsupervised machine learning can uncover hidden patterns in music. By analyzing Spotify audio features and applying K-Means clustering, we group songs with similar sound profiles and generate cohesive, human-intuitive playlists all without using genre labels.
 
 # 📌 Project Overview
 Modern music libraries contain millions of tracks. Manually curating playlists based on mood or sound is time-consuming and subjective. This project demonstrates how Spotify audio features combined with unsupervised ML can:
